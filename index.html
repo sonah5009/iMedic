@@ -6,5 +6,21 @@
     <title>iMedic</title>
     <link rel="stylesheet" href="" />
   </head>
-  <body></body>
+  <body>
+    <h1>hi</h1>
+    <script>
+      window.addEventListener(
+        "flutterInAppWebViewPlatformReady",
+        function (event) {
+          // 이 부분에서 Flutter 앱의 'callflutter' 핸들러를 호출합니다.
+          window.flutter_inappwebview
+            .callHandler("callflutter", "*** Message From Server JS ***")
+            .then(function (result) {
+              console.log(result);
+              console.log("최선아");
+            });
+        }
+      );
+    </script>
+  </body>
 </html>
